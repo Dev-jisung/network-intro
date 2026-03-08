@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
+// import { ThemeProvider } from "next-themes";
+// 💡 여기를 변경합니다! (next-themes 대신 방금 만든 껍데기 컴포넌트 경로로)
+import { ThemeProvider } from "../components/theme-provider";
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +31,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-mono", jetbrainsMono.variable)}>
+    <html
+      lang="en"
+      className={cn("font-mono", jetbrainsMono.variable)}
+      suppressHydrationWarning // 이 부분은 아주 잘 넣어주셨습니다!
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
