@@ -8,7 +8,7 @@ export default function SectionIndex() {
     { num: "01", title: "수강신청한 이유", desc: "Motivation" },
     { num: "02", title: "네트워크 관심 분야", desc: "Fields of Interest" },
     { num: "03", title: "그 외 관심있는 분야", desc: "Other Interests" },
-    { num: "04", title: "원하는 팀원 성향", desc: "Ideal Teammates" },
+    { num: "04", title: "원하는 팀플 방식", desc: "Ideal Teammates" },
   ];
 
   return (

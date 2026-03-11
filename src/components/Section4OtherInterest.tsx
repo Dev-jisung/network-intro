@@ -100,7 +100,7 @@ export default function Section4OtherInterest() {
         >
           <Gamepad2 className="w-10 h-10 text-purple-500 mb-6 group-hover:scale-110 transition-transform" />
           <h3 className="text-xl font-bold mb-2 text-zinc-800 dark:text-zinc-200">
-            FPS 게임 (스트레스 해소)
+            FPS 게임
           </h3>
           <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
             개발로 쌓인 피로는 오버워치나 발로란트 같은 FPS 게임을 즐기며
